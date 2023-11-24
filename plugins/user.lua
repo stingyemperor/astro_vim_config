@@ -9,4 +9,14 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    "danymat/neogen",
+    config = function() require("neogen").setup {} end,
+    event = "User AstroFile",
+  },
+  {
+    "gaborvecsei/usage-tracker.nvim",
+    config = function() require("usage-tracker").setup {} end,
+    event = "User AstroFile",
+  },
 }
