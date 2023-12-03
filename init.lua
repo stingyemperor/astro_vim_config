@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "catppuccin",
+  colorscheme = "catppuccin-macchiato",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -28,6 +28,25 @@ return {
 
   lsp = {
     -- customize lsp formatting options
+    config = {
+      clangd = {
+        capabilities = { offsetEncoding = "utf-8" },
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--suggest-missing-includes",
+          "--clang-tidy",
+          "--header-insertion=iwyu",
+          "--completion-style=detailed",
+          "--fallback-style=Chromium",
+        },
+        init_options = {
+          clangdFileStatus = true,
+          usePlaceholders = true,
+          completeUnimported = true,
+        },
+      },
+    },
     formatting = {
       -- control auto formatting on save
       format_on_save = {

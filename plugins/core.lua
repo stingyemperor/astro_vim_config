@@ -3,19 +3,13 @@ return {
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
+      -- dashboard-images.lua contains few "ASCII" images that you can change
+      opts.section.header.val = require("user/dashboard-images").cutty_cat
+
+      local button = require("astronvim.utils").alpha_button
+      opts.section.buttons.val = {
+        button("LDR f p", "  Open Project  "),
+        button("LDR s", "  Settings  "),
       }
       return opts
     end,
@@ -26,11 +20,17 @@ return {
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
     "L3MON4D3/LuaSnip",
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+      "benfowler/telescope-luasnip.nvim",
+      "evesdropper/luasnip-latex-snippets.nvim",
+    },
     config = function(plugin, opts)
       require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom luasnip configuration such as filetype extend or custom snippets
       local luasnip = require "luasnip"
       luasnip.filetype_extend("javascript", { "javascriptreact" })
+      luasnip.filetype_extend("cpp", { "cppdoc" })
     end,
   },
   -- {
