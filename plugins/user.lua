@@ -19,8 +19,4 @@ return {
     config = function() require("usage-tracker").setup {} end,
     event = "User AstroFile",
   },
-
-  {
-    "mfussenegger/nvim-lint",
-  },
 }
