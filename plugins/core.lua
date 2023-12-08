@@ -18,23 +18,23 @@ return {
   -- { "max397574/better-escape.nvim", enabled = false },
   --
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
-  {
-    "L3MON4D3/LuaSnip",
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-      "benfowler/telescope-luasnip.nvim",
-      "evesdropper/luasnip-latex-snippets.nvim",
-    },
-    config = function(plugin, opts)
-      require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
-      -- add more custom luasnip configuration such as filetype extend or custom snippets
-      local luasnip = require "luasnip"
-      luasnip.filetype_extend("javascript", { "javascriptreact" })
-      luasnip.filetype_extend("cpp", { "cpp" })
-      luasnip.filetype_extend("cpp", { "cppdoc" })
-      luasnip.filetype_extend("latex", { "latex-snippets" })
-    end,
-  },
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  --   dependencies = {
+  --     "rafamadriz/friendly-snippets",
+  --     "benfowler/telescope-luasnip.nvim",
+  --     "evesdropper/luasnip-latex-snippets.nvim",
+  --   },
+  --   config = function(plugin, opts)
+  --     require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+  --     -- add more custom luasnip configuration such as filetype extend or custom snippets
+  --     local luasnip = require "luasnip"
+  --     luasnip.filetype_extend("javascript", { "javascriptreact" })
+  --     luasnip.filetype_extend("cpp", { "cpp" })
+  --     luasnip.filetype_extend("cpp", { "cppdoc" })
+  --     luasnip.filetype_extend("latex", { "latex-snippets" })
+  --   end,
+  -- },
   -- {
   --   "windwp/nvim-autopairs",
   --   config = function(plugin, opts)
