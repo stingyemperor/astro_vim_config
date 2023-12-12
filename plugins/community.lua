@@ -22,6 +22,7 @@ return {
   { import = "astrocommunity.utility/noice-nvim" },
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
+  { import = "astrocommunity.color.twilight-nvim" },
   {
     "noice.nvim",
     opts = function(_, opts)
