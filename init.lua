@@ -29,6 +29,13 @@ return {
   lsp = {
     -- customize lsp formatting options
     config = {
+      ltex = {
+        settings = {
+          ltex = {
+            checkFrequency = "save",
+          },
+        },
+      },
       clangd = {
         capabilities = { offsetEncoding = "utf-8" },
         cmd = {

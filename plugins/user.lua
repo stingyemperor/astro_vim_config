@@ -35,4 +35,12 @@ return {
     config = function() require("luasnip-latex-snippets").setup {} end,
     event = "User AstroFile",
   },
+  {
+    "brymer-meneses/grammar-guard.nvim",
+    requires = {
+      "neovim/nvim-lspconfig",
+      "williamboman/nvim-lsp-installer",
+    },
+    event = "User AstroFile",
+  },
 }

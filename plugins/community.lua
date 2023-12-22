@@ -31,6 +31,5 @@ return {
       return opts
     end,
   },
-
   -- { import = "astrocommunity.completion.copilot-lua" },
 }
